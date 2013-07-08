@@ -95,7 +95,9 @@ public class WorldManager {
         if (mirrors.containsKey(name)) {
             name = mirrors.get(name);
         }
-
+        if (!containsWorld(name)) {
+            return getDefaultWorld();
+        }
         return worlds.get(name);
     }
 
